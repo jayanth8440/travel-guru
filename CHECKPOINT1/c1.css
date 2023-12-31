@@ -1,0 +1,76 @@
+
+.home {
+    width: 100vw;
+    height: 90vh;
+    background: url("images/bg4.jpg") no-repeat center;
+    background-size: cover;
+    animation: country-bg-animate 10s infinite ease-in-out;
+  }
+  
+  .home > .home-content {
+    width: 100vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .home > .home-content > .content {
+    color: white;
+  }
+  
+  .country-name::after {
+    content: "United States";
+    color: #ffc107;
+    animation: country-name-animate 10s infinite ease-in-out;
+  }
+@keyframes country-name-animate {
+    0%,
+    25% {
+      content: "United States";
+    }
+  
+    26%,
+    50% {
+      content: "India";
+    }
+  
+    51%,
+    75% {
+      content: "Germany";
+    }
+  
+    76%,
+    100% {
+      content: "Australia";
+    }
+  }
+  
+  @keyframes country-bg-animate {
+    0%,
+    25% {
+      background: url("./Images1/Statue-Libery-New-York-City.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  
+    26%,
+    50% {
+      background: url("./Images1/wp7231579.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  
+    51%,
+    75% {
+      background: url("./Images1/wp1834541.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  
+    76%,
+    100% {
+      background: url("./Images1/australia.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  }
+  

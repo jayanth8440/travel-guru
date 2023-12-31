@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's travel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <h1 class="navbar-brand text-dark fw-bold fs-1">
+          <span class="text-warning">Travel Guru</span>
+          <span style="color: blue;">Bookings.com</span>
+        </h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" href="#booking">Book</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link text-dark fw-bold dropdown-toggle"
+                href="#packages"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Packages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#packages">United States</a></li>
+                <li><a class="dropdown-item" href="#packages">India</a></li>
+                <li><a class="dropdown-item" href="#packages">Germany</a></li>
+                <li><a class="dropdown-item" href="#packages">France</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" href="#about">About</a>
+            </li>
+          </ul>
+
+          <button class="btn btn-warning" onclick="openModal('loginModal')" type="submit">Login</button>
+          <button class="btn btn-warning" onclick="openModal('registrationModal')">Register</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- home section -->
+    <section id="home" class="home">
+      <div class="home-content d-flex justify-content-center align-items-center">
+        <div class="content d-flex flex-column justify-content-center align-items-center">
+          <h2 class="display-6 fw-bold text-center">Ŵelcome※Pâssengers✈</h2>
+          <h1 class="display-3 fw-bold text-center">
+            Visit <span class="country-name"></span>
+          </h1>
+          <p class="text-center">
+            <span style="color: #FF5733; font-weight: bold;">Explore.</span>
+            <span style="color: #3366FF; font-weight: bold;">Experience.</span>
+            <span style="color: #33FFC7; font-weight: bold;">Enjoy.</span>
+          </p>
+          <button class="btn btn-light border-0 fs-6">Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- booking section -->
+    <section id="booking" class="booking-section container">
+      <!-- image -->
+      <div class="image-section">
+        <img
+        src="./Images/world.png"
+        alt="image"
+        />
+      </div>
+      
+      <!-- form -->
+      <div class="form-section">
+        <div><h1 class="section-heading">Your Journey Starts Here  <span>Your Journey Starts Here </span></h1></div>
+        <form id="bookingForm">
+          <div class="inputElementGrp">
+            <label for="whereTo">Destination:</label>
+            <select id="whereTo" name="whereTo">
+              <option value="">Select Country to Visit</option>
+              <option value="japan">Japan</option>
+              <option value="unitedStates">United States</option>
+              <option value="india">India</option>
+              <option value="france">France</option>
+              <option value="Srilanka">Sri Lanka</option>
+              <option value="singapore">Singapore</option>
+              <option value="china">China</option>
+              <option value="indonesia">Indonesia</option>
+              <option value="malaysia">Malaysia</option>
+              <option value="australia">Australia</option>
+            </select>
+            <span id="whereToError" class="error"></span>
+          </div>
+
+          <div class="inputElementGrp">
+            <label for="persons">Travellers:</label>
+            <input
+              type="number"
+              id="persons"
+              name="persons"
+              value=""
+              required
+            />
+            <span id="personsError" class="error"></span>
+          </div>
+
+          <div class="inputElementGrp">
+            <label for="startDate">Start Date:</label>
+            <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              value=""
+              required
+            />
+            <span id="startDateError" class="error"></span>
+          </div>
+
+          <div class="inputElementGrp">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" value="" required />
+            <span id="endDateError" class="error"></span>
+          </div>
+
+          <div class="inputElementGrp">
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              value=""
+              name="description"
+              aria-valuetext=""
+              rows="5"
+              minlength="50"
+              maxlength="500"
+              required
+            >
+          </textarea>
+            <span id="descriptionError" class="error"></span>
+          </div>
+
+          <button id="packageBookingBtn" class="btn btn-warning" type="submit">
+            Book Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- package section -->
+    <section id="packages">
+      <div><h1 class="section-heading">Discover Your Next Adventure.  <span>Discover Your Next Adventure. </span></h1></div>
+      <div id="package-section" class="package-section container">
+      </div>
+    </section>
+
+    <!-- services section -->
+    <section id="services" style="background-color: #f0f0f0;">
+      <div><h1 class="section-heading">Services <span>Services</span></h1></div>
+      <div id="services-section" class="services-section">
+      </div>
+    </section>
+
+    <!-- gallery section -->
+    <section id="gallery">
+      <div><h1 class="section-heading">Gallery <span>Gallery</span></h1></div>
+      <div id="gallery-section" class="gallery-section container">
+      </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about">
+    <div><h1 class="section-heading">About <span>About</span></h1></div>
+    <div class="container">
+      <div class="about-section">
+        <div class="about-img">
+          <img src="https://img.freepik.com/free-vector/gradient-world-tourism-day-illustration_52683-129641.jpg?w=1060&t=st=1700992467~exp=1700993067~hmac=729e12f8c3ee2667acd3ba5ff83b8220e03eb8ab6c8d5b790772e32623ab5159" alt="about-image">
+        </div>
+        <div class="about-text">
+            <p>Welcome to <span style="font-weight: bold;"><span class="text-warning">TGB.com</span>, your gateway to unforgettable travel experiences and seamless hotel bookings. We understand that every journey is a story waiting to be told, and we are here to make yours extraordinary. Whether you're a seasoned traveler or embarking on your first adventure, <span style="font-weight: bold;"><span class="text-warning">TGB.com</span> is your trusted companion in crafting the perfect getaway.</p>
+
+            <p>At <span style="font-weight: bold;"><span class="text-warning">TGB.com</span>, excellence is not just a goal; it's a standard. We continuously strive to exceed your expectations by staying ahead of industry trends, partnering with reputable establishments, and leveraging technology to enhance your booking experience.</p>
+
+          <a id="aboutViewMoreBtn" class="btn btn-warning" href="./about.html">View more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- footer section -->
+    <div class="footer-section container-fluid">
+      <h1 class="text-dark fw-bold fs-1 text-center">
+        <span class="text-warning">Travel Guru</span>
+        <span style="color: blue;">Bookings.com</span>
+      </h1>
+      <p class="text-center">
+        <span style="color: #FF5733; font-weight: bold;">Explore.</span>
+        <span style="color: #3366FF; font-weight: bold;">Experience.</span>
+        <span style="color: #33FFC7; font-weight: bold;">Enjoy.</span>
+      </p>
+      <div class="social-icons">
+        <div class="social-icon"><i class="bi bi-instagram"></i></div>
+        <div class="social-icon"><i class="bi bi-facebook"></i></div>
+        <div class="social-icon"><i class="bi bi-whatsapp"></i></div>
+        <div class="social-icon"><i class="bi bi-twitter"></i></div>
+      </div>
+      <p class="copyright-text">Copyright &copy; 2023 Travel - All rights reserved.</p>
+    </div>
+
+    <button id="back-to-top-btn" class="btn btn-warning"><i class="bi bi-caret-up-fill"></i></button>
+ <!-- Modal content for registration -->
+  <div id="registrationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" style="cursor: pointer;" onclick="closeModal('registrationModal')">&times;</span>
+      <div class="form-container">
+        <h5>Register</h5>
+        <form id="registrationForm" >
+          <input type="text" placeholder="Full Name" id="fullName" required>
+          <input type="tel" placeholder="Contact Number" id="contactNumber" required>
+          <input type="date" placeholder="Date of Birth" id="dateOfBirth" required>
+          <input type="email" placeholder="Email" id="email" required>
+          <input type="password" placeholder="Password" id="password" required>
+          <select id="gender" required>
+            <option value="" disabled selected>Choose Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <button type="submit" class="btn btn-warning">Register</button>
+        </form>
+        <div class="link">
+          <p>Already have an account? <a href="#" onclick="openModal('loginModal')">Login here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal content for login -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" style="cursor: pointer;" onclick="closeModal('loginModal')">&times;</span>
+      <div class="form-container">
+        <h5>Login</h5>
+        <form id="loginForm">
+          <input type="email" id="loginEmail" placeholder="Email" required>
+          <input type="password" id="loginPassword" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <div class="link">
+          <p>Don't have an account? <a href="#" onclick="registerModal('registrationModal','loginModal')">Register here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

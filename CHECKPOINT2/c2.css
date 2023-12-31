@@ -1,0 +1,201 @@
+
+.home {
+    width: 100vw;
+    height: 90vh;
+    background: url("images/bg4.jpg") no-repeat center;
+    background-size: cover;
+    animation: country-bg-animate 10s infinite ease-in-out;
+  }
+  
+  .home > .home-content {
+    width: 100vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .home > .home-content > .content {
+    color: white;
+  }
+  
+  .country-name::after {
+    content: "United States";
+    color: #ffc107;
+    animation: country-name-animate 10s infinite ease-in-out;
+  }
+@keyframes country-name-animate {
+    0%,
+    25% {
+      content: "United States";
+    }
+  
+    26%,
+    50% {
+      content: "India";
+    }
+  
+    51%,
+    75% {
+      content: "Germany";
+    }
+  
+    76%,
+    100% {
+      content: "Australia";
+    }
+  }
+  
+  @keyframes country-bg-animate {
+    0%,
+    25% {
+      background: url("./Images2/Statue-Libery-New-York-City.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  
+    26%,
+    50% {
+      background: url("./Images2/wp7231579.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  
+    51%,
+    75% {
+      background: url("./Images2/wp1834541.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  
+    76%,
+    100% {
+      background: url("./Images2/australia.jpg")
+        no-repeat center;
+      background-size: cover;
+    }
+  }
+  
+.btn:hover {
+    background-color: #3d07ff;
+  }
+  
+  a#navbarDropdown.nav-link.text-dark.fw-bold.dropdown-toggle::after {
+    display: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .container {
+    background-color: white;
+  }
+  
+  .booking-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  .close{
+    display: flex;
+    position: relative;
+    justify-content: right;
+  }
+  
+  .image-section {
+    padding-block: 30px;
+    height: 100%;
+    width: 50%;
+  }
+  
+  .image-section > img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .form-section {
+    padding: 20px;
+    width: 50%;
+  }
+  
+  .form-section label {
+    display: block;
+    /* margin-bottom: 10px; */
+  }
+  
+  .form-section select,
+  .form-section input,
+  .form-section textarea {
+    width: 100%;
+    padding: 10px;
+    /* margin-bottom: 15px; */
+    box-sizing: border-box;
+  }
+  
+.package-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-block: 30px;
+  }
+  
+  .package-card {
+    width: 30%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.13);
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  .package-card > img {
+    width: 100%;
+    height: 30vh;
+    border-radius: 5px;
+  }
+  
+  .card-content {
+    padding: 10px 10px;
+  }
+  
+  .card-content > .price {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+  }
+
+ 
+.section-heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.6vh;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    margin: 0;
+    text-transform: uppercase;
+    position: relative;
+    color: #151516;
+    z-index: 1;
+    width: max-content;
+    margin: auto;
+  }
+  
+  .section-heading > span {
+    position: absolute;
+    bottom: 10px;
+    right: 0%;
+    font-size: 4.8vh;
+    z-index: -1;
+    color: #151516;
+    opacity: 0.1;
+  }
+  
+  
+  
